@@ -1,0 +1,40 @@
+body{
+  
+}
+.main-content-app{
+  width: 400px;
+  float: left;
+}
+.main-content-app h1{
+  font-family: 'Open Sans', sans-serif;
+}
+.main-content-app label{
+  width: 100px;
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  color: #444;
+}
+.main-content-app input{
+  outline: none;
+  box-shadow: none;
+  padding: 2px 5px;
+  color: #444;
+}
+.main-content-app table{
+  width: 100%;
+  float: left;
+}
+.main-content-app th, td{
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  color: #000;
+}
+.main-content-app tr:nth-child(even){
+  background: #ccc;
+}
+.main-content-app tr:nth-child(odd){
+  background: #efefef;
+}
+.main-content-app a, button{
+  font-family: 'Open Sans', sans-serif;
+}

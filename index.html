@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="main-app">
+  <head>
+    <meta charset="utf-8">
+    <title>Lista Supermercado</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="js/main.controller.js"></script>
+  </head>
+  <body ng-controller="MainCtrl">
+    <div class="main-content-app" ng-show="marketView">
+      <h1>{{labelMarket}}</h1>
+      <label for="">Nome:</label>
+      <input type="text" name="name_product" value="" ng-model="name_product" placeholder="Ex: Sal" /><br /><br />
+      <label for="">Quantidade:</label>
+      <input type="number" name="qtd_product" value="" ng-model="qtd_product" placeholder="Ex: 2" /><br /><br />
+      <label for="">Preço:</label>
+      <input type="text" name="price_product" value="" ng-model="price_product" placeholder="Ex: 3,90" /><br /><br />
+      <button type="button" ng-click="addProductToList()" name="button" ng-disabled="!name_product || !qtd_product || !price_product">Adicionar a lista</button>
+      <br /><br />
+      <a href="" ng-click="isListView()">Ver lista</a>
+    </div>
+
+    <div class="main-content-app" ng-show="!marketView">
+      <h1>{{labelList}}</h1>
+      <table>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <td></td>
+        </tr>
+        <tr ng-repeat="product in arrayProducts">
+          <td>{{product.nome}}</td>
+          <td>{{product.qtd}}</td>
+          <td>R$ {{product.price}}</td>
+          <td style="cursor:pointer;" ng-click="removeProductFromList($index)">
+            <img src="img/garbage.png" alt="" />
+          </td>
+        </tr>
+      </table>
+      <br /><br />
+      <a href="" ng-click="isMarketView()">Voltar ao mercado</a>
+    </div>
+  </body>
+</html>
