@@ -1,7 +1,7 @@
 angular.module("main-app", [])
   .controller("MainCtrl", function($scope){
     $scope.labelMarket = "Supermercado";
-    $scope.labelList = "Lista";
+    $scope.labelList = "Lista de Produtos";
 
     $scope.marketView = true;
 
@@ -17,7 +17,7 @@ angular.module("main-app", [])
         };
 
       $scope.arrayProducts.push(arrayProducts);
-      
+
       $scope.name_product = '';
       $scope.qtd_product = '';
       $scope.price_product = '';
